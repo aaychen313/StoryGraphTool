@@ -1,58 +1,143 @@
 {
-    "Title": "Campus Life on the West Side",
-    "Credits": "Created by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Kresge",
+    "Title": "College Nine On-Campus Apartment Tour",
+    "Credits": "Created by Aaron Chen (aaychen@ucsc.edu).",
+    "InitialLocation": "Front Door",
+    
+    "Items": {
+        "RoomKey": {
+            "Name": "Room Key",
+            "Description": "a small key lying on the kitchen counter. It seems like it could be used to unlock a door.",
+            "Location": "Kitchen"
+        }
+    },
+
     "Locations": {
-        "Kresge": {
-            "Body": "This is Kresge College, lots of nice trees.",
+        "Front Door": {
+            "Body": "This is the entrance to my apartment that I'm sharing with 5 other people. By the door, there is a shoe rack left of the entrance. In front of you is the main hallway that connects all the rooms together.",
             "Choices": [
                 {
-                    "Text": "South",
-                    "Target": "Porter"
-                }
-            ]
-        },
-        "Porter": {
-            "Body": "This is Porter College, the trees are nice here too.",
-            "Choices": [
-                {
-                    "Text": "North",
-                    "Target": "Kresge"
+                    "Text": "Hallway",
+                    "Target": "Hallway"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Rachel Carson"
+                    "Text": "Leave",
+                    "Target": "Leave"
                 }
             ]
         },
-        "Rachel Carson": {
-            "Body": "Rachel Carson College, more sun and fewer trees.",
+
+        "Hallway": {
+            "Body": "This is the hallway that connects the living room, kitchen, and bathroom. From the entrance, the entryway to the living room and kitchen is to the left in the middle of the hallway, with the bathroom at the end of the hallway. The dorm rooms line the right wall.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Porter"
+                    "Text": "Front Door",
+                    "Target": "Front Door"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Oakes"
+                    "Text": "Living Room",
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "Kitchen",
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "Bathroom",
+                    "Target": "Bathroom"
+                },
+                { 
+                    "Text": "Dorm Room",   
+                    "Target": "Dorm Room", 
+                    "LockedBy": "RoomKey" 
+                },
+                {
+                    "Text": "Back Door",
+                    "Target": "Back Door"
                 }
             ]
         },
-        "Oakes": {
-            "Body": "Oakes College, even the buildings have tree bark on them.",
+
+        "Living Room": {
+            "Body": "Welcome to the living room! Its pretty bare, with only the provided furniture decorating the room, but its where me and my roommates hang out, do homework, and watch movies with a projector.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Rachel Carson"
+                    "Text": "Kitchen",
+                    "Target": "Kitchen"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Beyond"
+                    "Text": "Balcony",
+                    "Target": "Balcony"
+                },
+                {
+                    "Text": "Hallway",
+                    "Target": "Hallway"
+                }
+            ],
+            "Mechanism": "BalconyDoor"
+        },
+        "Kitchen": {
+            "Body": "Welcome to the kitchen! Its a mess of unorganized dish racks, appliances, and tools, but we try to keep it clean.",
+            "Choices": [
+                {
+                    "Text": "Living Room",
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "Hallway",
+                    "Target": "Hallway"
                 }
             ]
         },
-        "Beyond": {
-            "Body": "Grass, don't forget to check for ticks!"
+        "Balcony": {
+            "Body": "Stepping out onto the balcony shows a view of all the other apartment buildings in the area. Not the best of views, but its still a great place to get some fresh air.",
+            "Choices": [
+                {
+                    "Text": "Living Room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Bathroom": {
+            "Body": "The cleanest place in our apartment, because most of my roommates are germaphobes.",
+            "Choices": [
+                {
+                    "Text": "Back Door",
+                    "Target": "Back Door"
+                },
+                {
+                    "Text": "Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Back Door": {
+            "Body": "This is where I usually leave the apartment to go to class, since my dorm room is right next to it.",
+            "Choices": [
+                {
+                    "Text": "Bathroom",
+                    "Target": "Bathroom"
+                },
+                {
+                    "Text": "Hallway",
+                    "Target": "Hallway"
+                },
+                {
+                    "Text": "Leave",
+                    "Target": "Leave"
+                }
+            ]
+        },
+        "Dorm Room": {
+            "Body": "You’ve unlocked the door and entered the dorm room. It’s a bit messy, but it’s my space to relax and do homework.",
+            "Choices": [
+                { 
+                    "Text": "Hallway",      
+                    "Target": "Hallway"      
+                }
+            ]
+        },
+        "Leave": {
+            "Body": "You've left the apartment. Thanks for visiting!"
         }
     }
 }
